@@ -1,0 +1,8 @@
+%tr
+  %td
+    = promotion.product.master.sku
+  %td
+    = promotion.product.name
+  %td.actions
+    = link_to image_tag("admin/icons/delete.png", :alt => "Delete"), admin_promotion_path(promotion), :confirm => t("confirm"), :method => :delete
+    = link_to t("destroy"), admin_promotion_path(promotion), :confirm => t("confirm"), :method => :delete

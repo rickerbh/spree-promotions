@@ -1,0 +1,18 @@
+%h1 
+  = t("new_promotion")
+
+- form_for([:admin, @promotion]) do |f|
+  = f.error_messages
+  %fieldset
+    %p
+      %label{:for => "product_name"}
+        = t("product_name")
+      %span.required
+        *
+      = select("promotion", "product_id", @products.collect {|p| [ p.name, p.id ] })
+    %p.form-buttons
+      %button{:type => "submit"}
+        %span 
+          = t("submit")
+      = t("or")
+      = link_to t("cancel"), admin_promotions_path

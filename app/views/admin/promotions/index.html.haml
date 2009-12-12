@@ -1,0 +1,16 @@
+%h1 
+  = t("promotions")
+
+%table.index
+  %thead
+    %tr
+    %th 
+      = t("sku")
+    %th 
+      = t("product_name")
+    %th
+  %tbody
+    = render :partial => "promotion", :collection => @promotions, :include => [:product]
+
+= link_to image_tag("admin/icons/16x16/1.png", :alt => "Create Promotion"), new_admin_promotion_path
+= link_to t("create"), new_admin_promotion_path
